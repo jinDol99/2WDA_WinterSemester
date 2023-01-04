@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <h2 id="heading">Register</h2>
+    <form name="registerForm" onsubmit="return check()">
+        <!-- 기존 방식대로 submit을 하면 true를 기본값으로 하여금 서버에 값이 전송되게 됨.-->
+        <!-- 이 때, submit 클릭 후, 서버 전송 전 값 검증같은 특정 행동을 할 수 있도록 -->
+        <!-- 선택지를 쥐어주는 속성이 onSubmit. -->
+        <input type="text" name="name" id="regFormName" value="홍길동">
+        <input type="text" name="phone" id="regFormPhone" value="010-1234-5678">
+        <input type="submit" value="ok">
+    </form>
+
+    <script>
+        console.log(document.title);
+        /*
+        const name = document.forms[0].elements[0].value;
+        const phone = document.registerForm.phone.value;
+        이처럼 특정 폼의 값을 가져오려고 하면 위와 같이 document 
+        */
+        
+        const name = document.getElementById("regFormName");
+        const phone = document.getElementsByName("phone");
+        // [참고] JQuary식 getElementById : $("#name");
+
+        // console.log(`${name}, ${phone}`);
+        console.log(`${name}, ${phone[0]}`);
+
+        document.forms[0].elements[0].value = "홍길순";
+        document.registerForm.phone.value = "010-2222-3333";
+
+        // ----------------------
+
+        function check(){
+            const name = document.getElementById("regFormName");
+            const phone = document.getElementById("phone");
+
+            if (name.value.length == 0 || phone.value.length == 0) {
+                alert("넌 못지나간다");
+                return false;
+            } else {
+                alert("지나가도 좋다");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

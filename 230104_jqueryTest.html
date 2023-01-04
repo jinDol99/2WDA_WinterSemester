@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+        crossorigin="anonymous"></script>
+    <title>Hello</title>
+</head>
+<body>
+    <h2 id="heading">Register</h2>
+    <form name="registerForm">
+        <input type="text" name="name" id="regFormName" value="홍길동">
+        <input type="text" name="phone" id="regFormPhone" value="010-1234-5678">
+        <input type="submit" value="OK">
+    </form>
+    <button id="button">CLICK!</button>
+    <button id="countBtn">Count up</button>
+    <div id="parent"></div>
+    <h2 id="count">0</h2>
+
+    <script>
+        function check(){
+            const name = document.getElementById("regFormName");
+            const phone = document.getElementById("phone");
+
+            if (name.value.length == 0 || phone.value.length == 0) {
+                alert("넌 못지나간다");
+                return false;
+            } else {
+                alert("지나가도 좋다");
+                return true;
+            }
+        }
+
+        // jquery 방식으로 사용해보기: h2 태그 클릭시 클릭했다는 로그 출력
+
+        $(()=>{
+            $("#name").val("name!!");
+            console.log($("heading").text());
+            $("#heading").text("회원가입");
+            $("#heading").on('click', ()=>{
+                console.log("CLICK!!");
+            })
+        })
+
+        // jquery 사용해보기: 버튼 클릭시 child 텍스트 생성
+
+        $(()=>{
+            $("#button").on('click', ()=>{
+                const child = $("<p></p>");
+                child.text("child");
+                console.log("오예")
+                $("#parent").append(child);
+            });
+        });
+
+        // jquery 실습해보기: 버튼 클릭시 카운트 값 증가
+        const cnt = 0
+        $(()=>{
+            $("countBtn").on('click', ()=>{
+                cnt++;
+                console.log(cnt);
+                $("#count").text(cnt);
+            });
+        });
+        
+        // jquery 
+
+    </script>
+</body>
+</html>
