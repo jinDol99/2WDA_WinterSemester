@@ -1,0 +1,15 @@
+{
+  "name": "230105_server",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "230105_serverWithNodeJS.js",
+  "scripts": {
+    "test": "test00",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
