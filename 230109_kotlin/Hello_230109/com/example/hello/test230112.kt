@@ -19,7 +19,7 @@ class TestImpl : Test2 {
 // ...
 
 // 3장 60페이지 - data 클래스 작성하기
-data class User(
+data class User2(
     val name:String,
     val id:String
 )
@@ -29,7 +29,7 @@ fun main() {
 
     println("\n---------------\n")
 
-    val u1 = User("ABC", "abc")
-    val u2 = User("ABC", "abc")
+    val u1 = User2("ABC", "abc")
+    val u2 = User2("ABC", "abc")
     println(u1 == u2)
 }
