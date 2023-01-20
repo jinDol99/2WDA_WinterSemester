@@ -41,10 +41,22 @@ fun main() {
 
     println(divResult.toInt())*/
 
-    val num: Int = 10
+    // 자료형 확인 테스트
+    /*val num: Int = 10
     num.toDouble()
     val revertedNum: Double = num.toDouble()
 
     println("$num | ${num.javaClass.name}")  // 10 (Int 형식!)
-    println("$revertedNum | ${revertedNum.javaClass.name}")  // 10.0 (Double 형식!)
+    println("$revertedNum | ${revertedNum.javaClass.name}")  // 10.0 (Double 형식!)*/
+
+    // 제곱수 확인 문제 - https://school.programmers.co.kr/learn/courses/30/lessons/120909
+    val num1:Double = Math.sqrt(16.toDouble())
+    println("제곱근: $num1")
+    println("나누기1: ${num1 % 1}")
+    
+    if (num1 % 1 == 0.0) {
+        println("제곱근입니다")
+    } else {
+        println("제곱근이 아닙니다")
+    }
 }
